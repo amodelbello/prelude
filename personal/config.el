@@ -6,6 +6,8 @@
 (setq-default fill-column 90)
 (setq-default visual-line-mode t)
 (desktop-save-mode 1)
+(setq-default org-catch-invisible-edits 'show)
+(global-undo-tree-mode 0)
 
 ;; Ace Window
 (defvar aw-dispatch-always t)
