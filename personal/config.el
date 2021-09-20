@@ -1,7 +1,7 @@
 (require 'prelude-packages "~/.emacs.d/core/prelude-packages.el" t)
 
 ;; General Config
-(set-face-attribute 'default nil :height 140)
+;; (set-face-attribute 'default nil :height 120)
 (setq-default line-spacing 0.2)
 (setq-default fill-column 90)
 (setq-default visual-line-mode t)
