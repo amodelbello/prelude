@@ -15,5 +15,6 @@
 ;; [ ] whiteboard -- Face colors similar to markers on a whiteboard.
 ;; [ ] wombat -- Medium-contrast faces with a dark gray background.
 
+;; M-x disable-theme [theme]
 
-(setq prelude-theme 'deeper-blue)
+;; (setq prelude-theme 'adwaita)

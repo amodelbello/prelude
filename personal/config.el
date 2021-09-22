@@ -9,6 +9,9 @@
 (setq-default org-catch-invisible-edits 'show)
 (global-undo-tree-mode 0)
 
+;; Default kill ring behavior
+(define-key global-map (kbd "M-y") 'yank-pop)
+
 ;; Ace Window
 (defvar aw-dispatch-always t)
 
@@ -17,6 +20,13 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (defvar org-log-done t)
 
+(define-key org-mode-map (kbd "<M-s-up>") 'org-table-kill-row)
+(define-key org-mode-map (kbd "<M-s-down>") 'org-table-insert-row)
+
 ;; Multiple Cursors
 (prelude-require-package 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+;; Org Bullets
+(prelude-require-package 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
