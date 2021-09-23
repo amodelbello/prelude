@@ -3,7 +3,8 @@
 ;; General Config
 ;; (set-face-attribute 'default nil :height 120)
 (setq-default line-spacing 0.2)
-(setq-default fill-column 90)
+(setq-default fill-column 110)
+(setq-default whitespace-line-column 110)
 (setq-default visual-line-mode t)
 (desktop-save-mode 1)
 (setq-default org-catch-invisible-edits 'show)
@@ -14,6 +15,9 @@
 
 ;; Ace Window
 (defvar aw-dispatch-always t)
+
+;; Avy
+(define-key global-map (kbd "C-\"") 'avy-goto-char-2)
 
 ;; Org Mode
 (define-key global-map "\C-cl" 'org-store-link)
