@@ -2,46 +2,6 @@
 
 (prelude-require-package 'org-roam)
 
-;;; package -- General settings
-;;; Commentary:
-
-;;; Code:
-(setq-default global-tab-line-mode nil)
-(setq-default tab-line-mode nil)
-(setq-default tab-bar-mode nil)
-(setq-default scroll-bar-mode nil)
-(setq-default line-spacing 0.2)
-(set-frame-font "Menlo-14" nil t)
-
-(setq-default fill-column 80)
-(setq-default sentence-end-double-space nil)
-(setq-default whitespace-line-column 110)
-(setq-default visual-line-mode t)
-(desktop-save-mode 1)
-(setq-default org-catch-invisible-edits 'show)
-(setq-default prelude-whitespace nil)
-
-(setq auto-mode-alist (append '(("\\.cl$" . lisp-mode))
-                              auto-mode-alist))
-
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-
-;;keep cursor at same position when scrolling
-(setq scroll-preserve-screen-position 1)
-;;scroll window up/down by one line
-(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
-(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
-(global-set-key (kbd "C-M-q") 'query-replace)
-
-;; Default kill ring behavior
-(define-key global-map (kbd "M-y") 'yank-pop)
-
-;; Spell check
-(setq-default ispell-program-name "/usr/local/bin/aspell")
-
-;; Set REPL to run in inferior-lisp
-(setq-default inferior-lisp-program "clisp")
-
 (defvar aw-dispatch-always nil)
 
 (define-key global-map "\C-cl" 'org-store-link)
@@ -69,3 +29,48 @@
 
 (prelude-require-package 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+(set-frame-font "Menlo-13" nil t)
+(setq-default line-spacing 0.2)
+(setq-default fill-column 80)
+(setq-default sentence-end-double-space nil)
+(setq-default whitespace-line-column 110)
+
+(setq-default global-tab-line-mode nil)
+(setq-default tab-line-mode nil)
+(setq-default tab-bar-mode nil)
+(setq scroll-bar-mode nil)
+
+(add-hook 'prog-mode-hook 'format-all-mode)
+(add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
+(add-hook 'before-save-hook 'format-all-buffer)
+(setq tide-mode nil)
+
+;; (setq format-all-formatters '(("TypeScript" prettier)
+;;                               ("TypeScript" prettier)
+;;                               ("Python" black)))
+
+(setq-default visual-line-mode t)
+(desktop-save-mode 1)
+(setq-default org-catch-invisible-edits 'show)
+(setq-default prelude-whitespace nil)
+
+(setq auto-mode-alist (append '(("\\.cl$" . lisp-mode))
+                              auto-mode-alist))
+
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+
+;;keep cursor at same position when scrolling
+(setq scroll-preserve-screen-position 1)
+;;scroll window up/down by one line
+(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+(global-set-key (kbd "C-M-q") 'query-replace)
+
+;; Default kill ring behavior
+(define-key global-map (kbd "M-y") 'yank-pop)
+
+;; Spell check
+(setq-default ispell-program-name "/usr/local/bin/aspell")
