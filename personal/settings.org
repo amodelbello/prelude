@@ -52,10 +52,24 @@
    (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
          #+END_SRC
 * Config
+** Quick Open
+  #+BEGIN_SRC emacs-lisp
+    ;; General settings file
+    (global-set-key (kbd "\e\es")
+                    (lambda ()
+                      (interactive)
+                      (find-file "~/.emacs.d/personal/settings.org")))
+
+    ;; Additional packages
+    (global-set-key (kbd "\e\ep")
+                    (lambda ()
+                      (interactive)
+                      (find-file "~/.emacs.d/personal/preload/config.el")))
+  #+END_SRC  
 ** Font Size
   #+BEGIN_SRC emacs-lisp
     (set-frame-font "Menlo-13" nil t)
-    (setq-default line-spacing 0.2)
+    (setq-default line-spacing 0.4)
     (setq-default fill-column 80)
     (setq-default sentence-end-double-space nil)
     (setq-default whitespace-line-column 110)
@@ -65,7 +79,7 @@
     (setq-default global-tab-line-mode nil)
     (setq-default tab-line-mode nil)
     (setq-default tab-bar-mode nil)
-    (setq scroll-bar-mode nil)
+    (toggle-scroll-bar -1)
   #+END_SRC
 ** Auto Format
   #+BEGIN_SRC emacs-lisp
@@ -99,4 +113,7 @@
 
     ;; Spell check
     (setq-default ispell-program-name "/usr/local/bin/aspell")
+
+    ;; allow remembering risky variables
+    (defun risky-local-variable-p (sym &optional _ignored) nil)
   #+END_SRC

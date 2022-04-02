@@ -32,8 +32,20 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
+;; General settings file
+(global-set-key (kbd "\e\es")
+                (lambda ()
+                  (interactive)
+                  (find-file "~/.emacs.d/personal/settings.org")))
+
+;; Additional packages
+(global-set-key (kbd "\e\ep")
+                (lambda ()
+                  (interactive)
+                  (find-file "~/.emacs.d/personal/preload/config.el")))
+
 (set-frame-font "Menlo-13" nil t)
-(setq-default line-spacing 0.2)
+(setq-default line-spacing 0.4)
 (setq-default fill-column 80)
 (setq-default sentence-end-double-space nil)
 (setq-default whitespace-line-column 110)
@@ -41,16 +53,12 @@
 (setq-default global-tab-line-mode nil)
 (setq-default tab-line-mode nil)
 (setq-default tab-bar-mode nil)
-(setq scroll-bar-mode nil)
+(toggle-scroll-bar -1)
 
 (add-hook 'prog-mode-hook 'format-all-mode)
 (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
 (add-hook 'before-save-hook 'format-all-buffer)
 (setq tide-mode nil)
-
-;; (setq format-all-formatters '(("TypeScript" prettier)
-;;                               ("TypeScript" prettier)
-;;                               ("Python" black)))
 
 (setq-default visual-line-mode t)
 (desktop-save-mode 1)
@@ -74,3 +82,6 @@
 
 ;; Spell check
 (setq-default ispell-program-name "/usr/local/bin/aspell")
+
+;; allow remembering risky variables
+(defun risky-local-variable-p (sym &optional _ignored) nil)
