@@ -81,39 +81,37 @@
     (setq-default tab-bar-mode nil)
     (toggle-scroll-bar -1)
   #+END_SRC
-** Auto Format
-  #+BEGIN_SRC emacs-lisp
-    (add-hook 'prog-mode-hook 'format-all-mode)
-    (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
-    (add-hook 'before-save-hook 'format-all-buffer)
-    (setq tide-mode nil)
-  #+END_SRC
-
 ** Misc
   #+BEGIN_SRC emacs-lisp
-    (setq-default visual-line-mode t)
-    (desktop-save-mode 1)
-    (setq-default org-catch-invisible-edits 'show)
-    (setq-default prelude-whitespace nil)
+        (setq-default visual-line-mode t)
+        (desktop-save-mode 1)
+        (setq-default org-catch-invisible-edits 'show)
+        (setq-default prelude-whitespace nil)
+    ;;    (save-interprogram-paste-before-kill t)
+        (setq auto-mode-alist (append '(("\\.cl$" . lisp-mode))
+                                      auto-mode-alist))
 
-    (setq auto-mode-alist (append '(("\\.cl$" . lisp-mode))
-                                  auto-mode-alist))
+        (setq inferior-lisp-program "/usr/local/bin/sbcl")
 
-    (setq inferior-lisp-program "/usr/local/bin/sbcl")
+        ;;keep cursor at same position when scrolling
+        (setq scroll-preserve-screen-position 1)
+        ;;scroll window up/down by one line
+        (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+        (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+        (global-set-key (kbd "C-M-q") 'query-replace)
 
-    ;;keep cursor at same position when scrolling
-    (setq scroll-preserve-screen-position 1)
-    ;;scroll window up/down by one line
-    (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
-    (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
-    (global-set-key (kbd "C-M-q") 'query-replace)
+        ;; Default kill ring behavior
+        (define-key global-map (kbd "M-y") 'yank-pop)
 
-    ;; Default kill ring behavior
-    (define-key global-map (kbd "M-y") 'yank-pop)
+        ;; Spell check
+        (setq-default ispell-program-name "/usr/local/bin/aspell")
 
-    ;; Spell check
-    (setq-default ispell-program-name "/usr/local/bin/aspell")
+        ;; allow remembering risky variables
+        (defun risky-local-variable-p (sym &optional _ignored) nil)
 
-    ;; allow remembering risky variables
-    (defun risky-local-variable-p (sym &optional _ignored) nil)
+        ;; disable because we're using paredit
+        (smartparens-mode -1)
+
+        (tide-mode -1)
+
   #+END_SRC
