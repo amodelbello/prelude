@@ -1,6 +1,23 @@
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+
+;; Initializes the package system and prepares it to be used
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Initialize use-package on non-linux platforms
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+;; Make sure packages are downloaded and installed before they are run
+;; also frees you from having to put :ensure t after installing EVERY PACKAGE.
+(setq use-package-always-ensure t)
 
 (use-package beacon
   :ensure t

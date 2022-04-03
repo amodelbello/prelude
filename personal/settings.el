@@ -23,14 +23,12 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; Org-Roam
-(setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
-(setq org-roam-v2-ack t)
-(org-roam-db-autosync-mode)
+;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
+;; (setq org-roam-v2-ack t)
+;; (org-roam-db-autosync-mode)
 
 (prelude-require-package 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; General settings file
 (global-set-key (kbd "\e\es")
@@ -44,7 +42,7 @@
                   (interactive)
                   (find-file "~/.emacs.d/personal/preload/config.el")))
 
-(set-frame-font "Menlo-13" nil t)
+(set-frame-font "DejaVu Sans Mono-13" nil t)
 (setq-default line-spacing 0.4)
 (setq-default fill-column 80)
 (setq-default sentence-end-double-space nil)
@@ -54,8 +52,6 @@
 (setq-default tab-line-mode nil)
 (setq-default tab-bar-mode nil)
 (toggle-scroll-bar -1)
-
-
 
 (setq-default visual-line-mode t)
     (desktop-save-mode 1)

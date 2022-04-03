@@ -35,10 +35,10 @@
 
 ** Org Roam
  #+BEGIN_SRC emacs-lisp
-  ;; Org-Roam
-  (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
-  (setq org-roam-v2-ack t)
-  (org-roam-db-autosync-mode)
+   ;; Org-Roam
+   ;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
+   ;; (setq org-roam-v2-ack t)
+   ;; (org-roam-db-autosync-mode)
  #+END_SRC
 
 ** Multiple Cursors
@@ -47,10 +47,6 @@
   (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
   #+END_SRC
 
-** Themes
-   #+BEGIN_SRC emacs-lisp
-   (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-         #+END_SRC
 * Config
 ** Quick Open
   #+BEGIN_SRC emacs-lisp
@@ -65,10 +61,10 @@
                     (lambda ()
                       (interactive)
                       (find-file "~/.emacs.d/personal/preload/config.el")))
-  #+END_SRC  
+  #+END_SRC
 ** Font Size
   #+BEGIN_SRC emacs-lisp
-    (set-frame-font "Menlo-13" nil t)
+    (set-frame-font "DejaVu Sans Mono-10" nil t)
     (setq-default line-spacing 0.4)
     (setq-default fill-column 80)
     (setq-default sentence-end-double-space nil)
