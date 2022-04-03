@@ -42,7 +42,7 @@
                   (interactive)
                   (find-file "~/.emacs.d/personal/preload/config.el")))
 
-(set-frame-font "DejaVu Sans Mono-13" nil t)
+(set-frame-font "DejaVu Sans Mono-10" nil t)
 (setq-default line-spacing 0.4)
 (setq-default fill-column 80)
 (setq-default sentence-end-double-space nil)

@@ -108,6 +108,4 @@
         ;; disable because we're using paredit
         (smartparens-mode -1)
 
-        (tide-mode -1)
-
   #+END_SRC
