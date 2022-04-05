@@ -19,9 +19,6 @@
 (add-hook 'org-mode-hook
           (lambda () (define-key org-mode-map (kbd "C-'") nil)))
 
-(prelude-require-package 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
 ;; Org-Roam
 ;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
 ;; (setq org-roam-v2-ack t)

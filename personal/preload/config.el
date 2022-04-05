@@ -36,8 +36,29 @@
   :ensure t
   :init
   (progn
+    (add-hook 'lisp-mode-hook 'paredit-mode)
     (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
     (add-hook 'clojure-mode-hook 'paredit-mode)
     (add-hook 'clojurescript-mode-hook 'paredit-mode)
     (add-hook 'clojurec-mode-hook 'paredit-mode)
     (add-hook 'cider-repl-mode-hook 'paredit-mode)))
+
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1))
+
+(use-package yasnippet-snippets
+  :ensure t)
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package hungry-delete
+  :ensure t
+  :config
+  (progn
+    (global-hungry-delete-mode)
+    (setq hungry-delete-join-reluctantly t)))

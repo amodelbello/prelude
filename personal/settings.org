@@ -27,12 +27,6 @@
              (lambda () (define-key org-mode-map (kbd "C-'") nil)))
  #+END_SRC
 
-** Org Bullets
- #+BEGIN_SRC emacs-lisp
-  (prelude-require-package 'org-bullets)
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
- #+END_SRC
-
 ** Org Roam
  #+BEGIN_SRC emacs-lisp
    ;; Org-Roam
