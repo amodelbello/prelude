@@ -50,9 +50,11 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; (use-package hungry-delete
-;;   :ensure t
-;;   :config
-;;   (progn
-;;     (global-hungry-delete-mode)
-;;     (setq hungry-delete-join-reluctantly t)))
+(use-package buffer-move
+  :ensure t
+  :init
+  (progn
+    (global-set-key (kbd "<C-s-up>")     'buf-move-up)
+    (global-set-key (kbd "<C-s-down>")   'buf-move-down)
+    (global-set-key (kbd "<C-s-left>")   'buf-move-left)
+    (global-set-key (kbd "<C-s-right>")  'buf-move-right)))
