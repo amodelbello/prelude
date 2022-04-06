@@ -52,8 +52,8 @@
 
 (setq ibuffer-saved-filter-groups
            (quote (("default"
-                    ("org" (name . "^.*org$"))
-                    ("text" (mode . text-mode))
+                    ;("org" (name . "^.*org$"))
+                    ("org" (mode . org-mode))
                     ("IRC" (or (mode . circe-channel-mode) (mode . circe-server-mode)))
                     ("web" (or (mode . web-mode) (mode . js2-mode)))
                     ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
@@ -62,13 +62,14 @@
                              (name . "\*mu4e\*")
                              ))
                     ("programming" (or
-                                    (mode . EL-mode)
+                                    (mode . emacs-lisp-mode)
                                     (mode . lisp-mode)
                                     (mode . clojure-mode)
                                     (mode . clojurescript-mode)
                                     (mode . python-mode)
                                     (mode . c-mode)
                                     (mode . c++-mode)))
+                    ("text" (mode . text-mode))
                     ("magit" (mode . magit-mode))
                     ("dired" (mode . dired-mode))
                     ("emacs" (or

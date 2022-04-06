@@ -75,7 +75,7 @@
    #+begin_src emacs-lisp
      (setq ibuffer-saved-filter-groups
                 (quote (("default"
-                         ("org" (name . "^.*org$"))
+                         ("org" (mode . org-mode))
                          ("IRC" (or (mode . circe-channel-mode) (mode . circe-server-mode)))
                          ("web" (or (mode . web-mode) (mode . js2-mode)))
                          ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
@@ -84,7 +84,7 @@
                                   (name . "\*mu4e\*")
                                   ))
                          ("programming" (or
-                                         (mode . EL-mode)
+                                         (mode . emacs-lisp-mode)
                                          (mode . lisp-mode)
                                          (mode . clojure-mode)
                                          (mode . clojurescript-mode)
