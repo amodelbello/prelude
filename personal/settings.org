@@ -71,6 +71,10 @@
     (setq-default tab-bar-mode nil)
     (toggle-scroll-bar -1)
   #+END_SRC
+** Org Mode
+   #+begin_src emacs-lisp
+     (setq org-startup-folded t)
+   #+end_src
 ** ibuffer
    #+begin_src emacs-lisp
      (setq ibuffer-saved-filter-groups

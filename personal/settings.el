@@ -50,9 +50,10 @@
 (setq-default tab-bar-mode nil)
 (toggle-scroll-bar -1)
 
+(setq org-startup-folded t)
+
 (setq ibuffer-saved-filter-groups
            (quote (("default"
-                    ;("org" (name . "^.*org$"))
                     ("org" (mode . org-mode))
                     ("IRC" (or (mode . circe-channel-mode) (mode . circe-server-mode)))
                     ("web" (or (mode . web-mode) (mode . js2-mode)))
