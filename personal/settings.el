@@ -1,7 +1,5 @@
 (require 'prelude-packages "~/.emacs.d/core/prelude-packages.el" t)
 
-(prelude-require-package 'org-roam)
-
 (defvar aw-dispatch-always nil)
 
 (define-key global-map "\C-cl" 'org-store-link)
@@ -19,7 +17,7 @@
 (add-hook 'org-mode-hook
           (lambda () (define-key org-mode-map (kbd "C-'") nil)))
 
-;; Org-Roam
+;; (prelude-require-package 'org-roam)
 ;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
 ;; (setq org-roam-v2-ack t)
 ;; (org-roam-db-autosync-mode)
@@ -49,6 +47,9 @@
 (setq-default tab-line-mode nil)
 (setq-default tab-bar-mode nil)
 (toggle-scroll-bar -1)
+
+; easily shrink window vertically
+(global-set-key (kbd "C-x %") (kbd "C-u -1 C-x ^"))
 
 (setq org-startup-folded t)
 

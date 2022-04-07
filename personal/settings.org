@@ -1,8 +1,6 @@
 * Prelude Packages
  #+BEGIN_SRC emacs-lisp
   (require 'prelude-packages "~/.emacs.d/core/prelude-packages.el" t)
-
-  (prelude-require-package 'org-roam)
  #+END_SRC
 ** Ace Window
  #+BEGIN_SRC emacs-lisp
@@ -19,17 +17,13 @@
    (define-key org-mode-map (kbd "<M-s-down>") 'org-table-insert-row)
    (setq org-default-notes-file "~/pCloud Drive/org/notes.org")
 
-   ; this works
    (define-key org-mode-map (kbd "C-'") nil)
-
-   ; but this doesn't work. how come?
-   (add-hook 'org-mode-hook
-             (lambda () (define-key org-mode-map (kbd "C-'") nil)))
+   (setq org-startup-folded t)
  #+END_SRC
 
 ** Org Roam
  #+BEGIN_SRC emacs-lisp
-   ;; Org-Roam
+   ;; (prelude-require-package 'org-roam)
    ;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
    ;; (setq org-roam-v2-ack t)
    ;; (org-roam-db-autosync-mode)
@@ -70,11 +64,11 @@
     (setq-default tab-line-mode nil)
     (setq-default tab-bar-mode nil)
     (toggle-scroll-bar -1)
+
+    ; easily shrink window vertically
+    (global-set-key (kbd "C-x %") (kbd "C-u -1 C-x ^"))
+
   #+END_SRC
-** Org Mode
-   #+begin_src emacs-lisp
-     (setq org-startup-folded t)
-   #+end_src
 ** ibuffer
    #+begin_src emacs-lisp
      (setq ibuffer-saved-filter-groups
