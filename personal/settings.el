@@ -17,6 +17,7 @@
 
 (define-key org-mode-map (kbd "C-'") nil)
 (setq org-startup-folded t)
+(setq org-hide-leading-stars t)
 
 ;; (prelude-require-package 'org-roam)
 ;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))

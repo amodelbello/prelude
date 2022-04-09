@@ -1,3 +1,8 @@
+#+title: Custom emacs settings
+#+author: Amo DelBello
+#+description: Custom configuration using emacs prelude as a starting point
+#+startup: content
+
 * Prelude Packages
  #+BEGIN_SRC emacs-lisp
   (require 'prelude-packages "~/.emacs.d/core/prelude-packages.el" t)
@@ -25,6 +30,7 @@
 
    (define-key org-mode-map (kbd "C-'") nil)
    (setq org-startup-folded t)
+   (setq org-hide-leading-stars t)
  #+END_SRC
 
 ** Org Roam
