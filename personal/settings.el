@@ -10,12 +10,8 @@
 (define-key org-mode-map (kbd "<M-s-down>") 'org-table-insert-row)
 (setq org-default-notes-file "~/pCloud Drive/org/notes.org")
 
-; this works
 (define-key org-mode-map (kbd "C-'") nil)
-
-; but this doesn't work. how come?
-(add-hook 'org-mode-hook
-          (lambda () (define-key org-mode-map (kbd "C-'") nil)))
+(setq org-startup-folded t)
 
 ;; (prelude-require-package 'org-roam)
 ;; (setq org-roam-directory (file-truename "~/pCloud Drive/org-roam"))
@@ -37,7 +33,7 @@
                   (interactive)
                   (find-file "~/.emacs.d/personal/preload/config.el")))
 
-(set-frame-font "DejaVu Sans Mono-12" nil t)
+(set-frame-font "DejaVu Sans Mono-13" nil t)
 (setq-default line-spacing 0.4)
 (setq-default fill-column 80)
 (setq-default sentence-end-double-space nil)
@@ -50,8 +46,6 @@
 
 ; easily shrink window vertically
 (global-set-key (kbd "C-x %") (kbd "C-u -1 C-x ^"))
-
-(setq org-startup-folded t)
 
 (setq ibuffer-saved-filter-groups
            (quote (("default"

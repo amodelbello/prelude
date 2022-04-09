@@ -58,3 +58,17 @@
     (global-set-key (kbd "<C-s-down>")   'buf-move-down)
     (global-set-key (kbd "<C-s-left>")   'buf-move-left)
     (global-set-key (kbd "<C-s-right>")  'buf-move-right)))
+
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :config
+  (progn
+    (setq doom-modeline-minor-modes nil)))
+
+(use-package spacemacs-theme
+  :defer t
+  :init ())

@@ -52,7 +52,7 @@
   #+END_SRC
 ** Font Size
   #+BEGIN_SRC emacs-lisp
-    (set-frame-font "DejaVu Sans Mono-12" nil t)
+    (set-frame-font "DejaVu Sans Mono-13" nil t)
     (setq-default line-spacing 0.4)
     (setq-default fill-column 80)
     (setq-default sentence-end-double-space nil)
