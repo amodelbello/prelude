@@ -2,6 +2,11 @@
 
 (defvar aw-dispatch-always nil)
 
+(custom-set-variables
+ '(company-quick-access-keys '("a" "o" "e" "u" "i"))
+ '(company-quick-access-modifier 'super)
+ '(setq company-tooltip-flip-when-above nil))
+
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (defvar org-log-done t)

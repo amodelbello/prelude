@@ -6,7 +6,13 @@
  #+BEGIN_SRC emacs-lisp
   (defvar aw-dispatch-always nil)
  #+END_SRC
-
+** Company
+   #+begin_src emacs-lisp
+     (custom-set-variables
+      '(company-quick-access-keys '("a" "o" "e" "u" "i"))
+      '(company-quick-access-modifier 'super)
+      '(setq company-tooltip-flip-when-above nil))
+   #+end_src
 ** Org Mode
  #+BEGIN_SRC emacs-lisp
    (define-key global-map "\C-cl" 'org-store-link)
