@@ -49,6 +49,9 @@
 (add-hook 'calc-mode-hook
           (lambda ()
             (setq line-spacing 0)))
+(add-hook 'calc-trail-mode-hook
+          (lambda ()
+            (setq line-spacing 0)))
 
 (setq-default global-tab-line-mode nil)
 (setq-default tab-line-mode nil)

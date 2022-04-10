@@ -17,9 +17,23 @@
   :ensure t
   :config (beacon-mode 1))
 
+(use-package format-all 
+  :hook
+  ((prog-mode . format-all-mode)
+   (format-all-mode-hook . format-all-ensure-formatter))
+  :config
+  (custom-set-variables
+   '(format-all-formatters
+     (quote (("Python" black)
+             ("JavaScript" prettier))))))
+
+;; Alternate format-all config
 ;; (use-package format-all
 ;;   :ensure t
-;;   :config (format-all-mode 1)
+;;   :config
+;;   (progn
+;;     (format-all-mode 1)
+;;     (format-all-show-errors 'always))
 ;;   :init
 ;;   (progn
 ;;     (add-hook 'prog-mode-hook 'format-all-mode)
