@@ -17,14 +17,14 @@
   :ensure t
   :config (beacon-mode 1))
 
-(use-package format-all
-  :ensure t
-  :config (format-all-mode 1)
-  :init
-  (progn
-    (add-hook 'prog-mode-hook 'format-all-mode)
-    (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
-    (add-hook 'before-save-hook 'format-all-buffer)))
+;; (use-package format-all
+;;   :ensure t
+;;   :config (format-all-mode 1)
+;;   :init
+;;   (progn
+;;     (add-hook 'prog-mode-hook 'format-all-mode)
+;;     (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
+;;     (add-hook 'before-save-hook 'format-all-buffer)))
 
 (use-package paredit
   :ensure t
@@ -48,7 +48,9 @@
 (use-package org-bullets
   :ensure t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (org-bullets-mode 1))))
 
 (use-package buffer-move
   :ensure t
@@ -69,6 +71,10 @@
   (progn
     (setq doom-modeline-minor-modes nil)))
 
-(use-package spacemacs-theme
-  :defer t
+(use-package spacemacs-common
+  :ensure spacemacs-theme
+  :config (load-theme 'spacemacs-light t))
+
+(use-package gnuplot
+  :ensure t
   :init ())

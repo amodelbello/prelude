@@ -39,11 +39,16 @@
                   (interactive)
                   (find-file "~/.emacs.d/personal/preload/config.el")))
 
-(set-frame-font "DejaVu Sans Mono-13" nil t)
-(setq-default line-spacing 0.4)
+(set-frame-font "DejaVu Sans Mono-14" nil t)
+(setq-default line-spacing 0.3)
 (setq-default fill-column 80)
 (setq-default sentence-end-double-space nil)
 (setq-default whitespace-line-column 110)
+
+;; Because the line-spacing above messes up calc
+(add-hook 'calc-mode-hook
+          (lambda ()
+            (setq line-spacing 0)))
 
 (setq-default global-tab-line-mode nil)
 (setq-default tab-line-mode nil)

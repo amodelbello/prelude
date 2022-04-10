@@ -43,8 +43,8 @@
 
 ** Multiple Cursors
  #+BEGIN_SRC emacs-lisp
-  (prelude-require-package 'multiple-cursors)
-  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+   (prelude-require-package 'multiple-cursors)
+   (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
   #+END_SRC
 * Config
 ** Quick Open
@@ -63,11 +63,17 @@
   #+END_SRC
 ** Font Size
   #+BEGIN_SRC emacs-lisp
-    (set-frame-font "DejaVu Sans Mono-13" nil t)
-    (setq-default line-spacing 0.4)
+    (set-frame-font "DejaVu Sans Mono-14" nil t)
+    (setq-default line-spacing 0.3)
     (setq-default fill-column 80)
     (setq-default sentence-end-double-space nil)
     (setq-default whitespace-line-column 110)
+
+    ;; Because the line-spacing above messes up calc
+    (add-hook 'calc-mode-hook
+              (lambda ()
+                (setq line-spacing 0)))
+
   #+END_SRC
 ** Window Things
   #+BEGIN_SRC emacs-lisp
