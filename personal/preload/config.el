@@ -91,4 +91,11 @@
 
 (use-package gnuplot
   :ensure t
-  :init ())
+  :config
+  (add-to-list 'auto-mode-alist '("\\.gp?\\'" . gnuplot-mode)))
+
+(use-package eyebrowse
+  :ensure t
+  :config 
+  (eyebrowse-mode)
+  )
